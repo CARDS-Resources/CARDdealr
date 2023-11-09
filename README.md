@@ -32,7 +32,7 @@ library(CARDdealr)
 lung_cancer_screening_locations = src_acr_lung_cancer_screening_data()
 ```
 
-    ## INFO  [13:31:31.183] Starting acr_lung_cancer_screening_data
+    ## INFO  [15:45:26.456] Starting acr_lung_cancer_screening_data
 
     ## Rows: 3590 Columns: 8
     ## ── Column specification ────────────────────────────────────────────────────────
@@ -42,7 +42,7 @@ lung_cancer_screening_locations = src_acr_lung_cancer_screening_data()
     ## ℹ Use `spec()` to retrieve the full column specification for this data.
     ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 
-    ## INFO  [13:31:33.418] Completing acr_lung_cancer_screening_data
+    ## INFO  [15:45:28.634] Completing acr_lung_cancer_screening_data
 
 ## Available datasets
 
@@ -62,3 +62,5 @@ available_datasets() |> knitr::kable()
 | Health Resources and Services Administration (HRSA) facilities              | src_hrsa_facility_data             |
 | National Plan & Provider Enumeration System (NPPES) GI providers            | src_nppes_gi_data                  |
 | National Plan & Provider Enumeration System (NPPES) Oncology Providers      | src_nppes_onco_data                |
+| CDC Social Vulnerability Index                                              | src_cdc_social_vulnerability_index |
+| United States county health rankings                                        | src_us_county_health_rankings      |

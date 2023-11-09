@@ -2,7 +2,7 @@ Package: CARDdealr
 Type: Package
 Title: Easy access to Epidemiological, Population, and Public Health Data 
   (for cancer centers)
-Version: 0.1.6
+Version: 0.1.7
 Authors@R: c(
     person("Sean", "Davis", , "seandavi@gmail.com", 
       role = c("aut", "cre"),
