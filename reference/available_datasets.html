@@ -72,7 +72,7 @@ in the list. See examples for details and for viewing suggestions.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">res</span> <span class="op">=</span> <span class="fu">available_datasets</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">res</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10 × 2</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 12 × 2</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    name                                                                 accessor</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> American College of Radiology Lung Cancer Screening Registry (LCSR)… src_acr…</span>
@@ -85,9 +85,11 @@ in the list. See examples for details and for viewing suggestions.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Health Resources and Services Administration (HRSA) facilities       src_hrs…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> National Plan &amp; Provider Enumeration System (NPPES) GI providers     src_npp…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> National Plan &amp; Provider Enumeration System (NPPES) Oncology Provid… src_npp…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> CDC Social Vulnerability Index                                       src_cdc…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> United States county health rankings                                 src_us_…</span>
 <span class="r-in"><span><span class="co"># and how to use the accessor programmatically</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/get.html" class="external-link">get</a></span><span class="op">(</span><span class="va">res</span><span class="op">[</span><span class="fl">1</span>,<span class="op">]</span><span class="op">$</span><span class="va">accessor</span><span class="op">)</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO  [08:03:22.397] Starting acr_lung_cancer_screening_data</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO  [15:27:47.552] Starting acr_lung_cancer_screening_data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Rows: </span><span style="color: #0000BB;">3590</span> <span style="font-weight: bold;">Columns: </span><span style="color: #0000BB;">8</span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">──</span> <span style="font-weight: bold;">Column specification</span> <span style="color: #00BBBB;">────────────────────────────────────────────────────────</span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Delimiter:</span> ","</span>
@@ -95,7 +97,7 @@ in the list. See examples for details and for viewing suggestions.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Use `spec()` to retrieve the full column specification for this data.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Specify the column types or set `show_col_types = FALSE` to quiet this message.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO  [08:03:24.469] Completing acr_lung_cancer_screening_data</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO  [15:27:49.868] Completing acr_lung_cancer_screening_data</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3,590 × 8</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    Type                Name  Address State Phone_number Notes latitude longitude</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
@@ -117,7 +119,7 @@ in the list. See examples for details and for viewing suggestions.</p>
 <span class="r-in"><span><span class="va">dd</span> <span class="op">=</span> <span class="fu">dataset_details</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">dd</span>,list.len<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ datasets :List of 10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ datasets :List of 11</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ src_acr_lung_cancer_screening_data:List of 2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ columns   :List of 8</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..$ Type        : chr "character"</span>
@@ -153,6 +155,7 @@ in the list. See examples for details and for viewing suggestions.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "src_epa_tri_data"                   "src_epa_superfund_data"            </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "src_fda_mammography_data"           "src_hrsa_facility_data"            </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "src_nppes_gi_data"                  "src_nppes_onco_data"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [11] "src_cdc_social_vulnerability_index"</span>
 <span class="r-in"><span><span class="co"># evaluated</span></span></span>
 <span class="r-in"><span><span class="va">dd</span><span class="op">$</span><span class="va">eval_date</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2023-11-09"</span>
