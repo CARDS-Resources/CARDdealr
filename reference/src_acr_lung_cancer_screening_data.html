@@ -12,7 +12,7 @@ lung cancer screening registry (LCSR)."><!-- mathjax --><script src="https://cdn
     
     <a class="navbar-brand me-2" href="../index.html">CARDdealr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.5</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.6</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -104,15 +104,32 @@ recommendations and monitor and compare appropriate use of Lung-RADS#'</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># example code</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">lcs</span> <span class="op">=</span> <span class="fu">src_acr_lung_cancer_screening_data</span><span class="op">(</span>nrows<span class="op">=</span><span class="fl">1000</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO  [13:37:14.553] Starting acr_lung_cancer_screening_data</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in read_csv("https://report.acr.org/t/PUBLIC/views/NRDRLCSLocator/ACRLCSDownload.csv",     ...):</span> unused argument (nrows = 1000)</span>
+<span class="r-in"><span><span class="va">lcs</span> <span class="op">=</span> <span class="fu">src_acr_lung_cancer_screening_data</span><span class="op">(</span>n_max<span class="op">=</span><span class="fl">1000</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO  [08:03:25.812] Starting acr_lung_cancer_screening_data</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Rows: </span><span style="color: #0000BB;">1000</span> <span style="font-weight: bold;">Columns: </span><span style="color: #0000BB;">8</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">──</span> <span style="font-weight: bold;">Column specification</span> <span style="color: #00BBBB;">────────────────────────────────────────────────────────</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Delimiter:</span> ","</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">chr</span> (8): 1 Facility Name, 2 Street Address, 3 city, 4 state, 5 ZIP Code, 6 P...</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Use `spec()` to retrieve the full column specification for this data.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Specify the column types or set `show_col_types = FALSE` to quiet this message.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO  [08:03:28.053] Completing acr_lung_cancer_screening_data</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">lcs</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'lcs' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Type"         "Name"         "Address"      "State"        "Phone_number"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [6] "Notes"        "latitude"     "longitude"   </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">lcs</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'lcs' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Rows: 1,000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Columns: 8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ Type         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Lung Cancer Screening", "Lung Cancer Screening", "Lung C…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ Name         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Akron General Hospital", "Corewell Health Ludington Hosp…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ Address      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "1 Akron General Ave, Akron, OH 44307-2432", "1 Atkinson …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ State        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "OH", "MI", "NY", "NJ", "MA", "NJ", "NJ", "NJ", "NY", "NJ…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ Phone_number <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "330-344-6450", "231-843-2591", "607-547-3663", "973-429-…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ Notes        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Lung Cancer Screening Designated Site", "LCSR", "LCSR", …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ latitude     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "", "", "", "", "", "", "", "", "", "", "", "", "", "", "…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ longitude    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "", "", "", "", "", "", "", "", "", "", "", "", "", "", "…</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
